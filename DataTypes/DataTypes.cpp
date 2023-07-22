@@ -33,3 +33,22 @@ int main() {
 	std::cout << typeid(t).name() << std::endl;
 	std::cout << typeid(u).name() << std::endl;
 }
+
+//preprocessor directives (eg. #include....) #never ends with semicolon
+
+#include<iostream>
+#include<string>
+#include<cstdint> //some standard libraries of c are made available for c++ by adding c_in front of it
+
+#define POWER 3000 //It is called macros and its simple function is find and replace
+#define DEBUG      //It is a DEBUG directive which do not requires any value if used in ifdef derective    
+
+int main() {
+	int32_t a = POWER;
+	uint8_t b = 35;
+#ifdef DEBUG                                                  //this is not if endif this is ifdef directive which is different.
+	std::cout << "[About to perform Addition]" << std::endl;
+#endif
+	a += b;
+	std::cout << "The required integer is " << a << std::endl;
+}
